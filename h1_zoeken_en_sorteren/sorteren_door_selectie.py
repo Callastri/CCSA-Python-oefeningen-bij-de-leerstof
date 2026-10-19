@@ -1,5 +1,18 @@
 def selection_sort_vooraan(a):
-    pass
+    n = len(a)
+    for i in range(0, n - 1):
+        positie = i
+        min = a[i]
+        for j in range(i + 1, n):
+            if a[j] < min:
+                positie = j
+                min =[j]
+        a[positie] = a[i]
+        a[i] = min
+        print(a)
+    return a
+
+
 
 if __name__ == "__main__":
     a = [int(_) for _ in input().split()]

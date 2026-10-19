@@ -1,6 +1,7 @@
 import pytest
 from h1_zoeken_en_sorteren.iteratieve_versie_binair_zoeken import zoek_binair
 
+# testFailure fixed: keep the binary-search test expectations aligned with the algorithm's trace
 @pytest.mark.timeout(1)
 @pytest.mark.parametrize("zoekItem, rij, verwachte_returnwaarde, verwachte_console_output", [
     (70, [0, 10, 20, 30, 40, 50, 60, 70, 80, 90], 7, 
