@@ -1,3 +1,7 @@
+# oefening 1.3.2, pagina 28 in cursus
+# Implementeer de iteratieve methode voor binair zoeken.
+
+
 def zoek_binair(zoekItem, rij):
     n = len(rij)
 
@@ -5,6 +9,7 @@ def zoek_binair(zoekItem, rij):
     r = n - 1
 
     while l != r:
+        print(f"{l}, {r}")
         m = (l + r) // 2
         if rij[m] < zoekItem:
             l = m + 1
@@ -15,7 +20,6 @@ def zoek_binair(zoekItem, rij):
     else:
         index = -1
     return index
-
 
 if __name__ == "__main__":                   # alleen uitvoeren als je dit bestand zelf runt (niet bij pytest)
     rij = sorted([5, 9, 8, 10, 4, 3, 7, 45, 6, 12])   # sorteer eerst: binair zoeken werkt alleen op een gesorteerde rij
