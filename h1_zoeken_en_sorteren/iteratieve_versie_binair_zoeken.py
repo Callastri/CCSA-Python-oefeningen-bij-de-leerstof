@@ -1,21 +1,20 @@
-def zoek_binair(zoekItem, rij):              # functie die zoekItem zoekt in een GESORTEERDE rij
-    n = len(rij)                             # n = aantal elementen in de rij
+def zoek_binair(zoekItem, rij):
+    n = len(rij)
 
-    l = 0                                    # l = linkergrens van het zoekgebied (eerste vakje)
-    r = n - 1                                # r = rechtergrens van het zoekgebied (laatste vakje)
+    l = 0
+    r = n - 1
 
-    while l != r:                            # herhaal zolang het zoekgebied meer dan 1 vakje heeft
-        print(f"{l}, {r}")                   # toon de grenzen (controle-uitvoer van de opgave)
-        m = (l + r) // 2                     # m = midden van het zoekgebied, naar beneden afgerond
-        if rij[m] < zoekItem:                # is het middelste element kleiner dan wat we zoeken?
-            l = m + 1                        #   ja: het zit rechts van m, dus zoek verder in de rechterhelft
-        else:                                # nee: het zit op m of links ervan
-            r = m                            #   dus zoek verder in de linkerhelft (m blijft erbij!)
-    if rij[l] == zoekItem:                   # er blijft 1 vakje over: is dat wat we zoeken?
-        index = l                            #   ja: gevonden op plaats l
+    while l != r:
+        m = (l + r) // 2
+        if rij[m] < zoekItem:
+            l = m + 1
+        else:
+            r = m
+    if rij[l] == zoekItem:
+        index = l
     else:
-        index = -1                           #   nee: niet gevonden, -1 betekent "zit er niet in"
-    return index                             # geef het resultaat terug
+        index = -1
+    return index
 
 
 if __name__ == "__main__":                   # alleen uitvoeren als je dit bestand zelf runt (niet bij pytest)
